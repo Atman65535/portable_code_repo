@@ -1,0 +1,9 @@
+/home/atman/workspace/portable_code_repo/c_code/build/CMakeFiles/test1.dir
+/home/atman/workspace/portable_code_repo/c_code/build/CMakeFiles/test2.dir
+/home/atman/workspace/portable_code_repo/c_code/build/CMakeFiles/kmp.dir
+/home/atman/workspace/portable_code_repo/c_code/build/CMakeFiles/edit_cache.dir
+/home/atman/workspace/portable_code_repo/c_code/build/CMakeFiles/rebuild_cache.dir
+/home/atman/workspace/portable_code_repo/c_code/build/templates/CMakeFiles/heap.dir
+/home/atman/workspace/portable_code_repo/c_code/build/templates/CMakeFiles/huffman.dir
+/home/atman/workspace/portable_code_repo/c_code/build/templates/CMakeFiles/edit_cache.dir
+/home/atman/workspace/portable_code_repo/c_code/build/templates/CMakeFiles/rebuild_cache.dir
