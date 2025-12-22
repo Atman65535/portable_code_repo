@@ -50,4 +50,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/kmp.dir/DependInfo.cmake"
   "templates/CMakeFiles/heap.dir/DependInfo.cmake"
   "templates/CMakeFiles/huffman.dir/DependInfo.cmake"
+  "templates/CMakeFiles/priority_queue.dir/DependInfo.cmake"
   )

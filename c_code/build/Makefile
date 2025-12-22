@@ -181,6 +181,19 @@ huffman/fast:
 	$(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/build
 .PHONY : huffman/fast
 
+#=============================================================================
+# Target rules for targets named priority_queue
+
+# Build rule for target.
+priority_queue: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 priority_queue
+.PHONY : priority_queue
+
+# fast build rule for target.
+priority_queue/fast:
+	$(MAKE) $(MAKESILENT) -f templates/CMakeFiles/priority_queue.dir/build.make templates/CMakeFiles/priority_queue.dir/build
+.PHONY : priority_queue/fast
+
 kmp.o: kmp.cpp.o
 .PHONY : kmp.o
 
@@ -264,6 +277,7 @@ help:
 	@echo "... heap"
 	@echo "... huffman"
 	@echo "... kmp"
+	@echo "... priority_queue"
 	@echo "... test1"
 	@echo "... test2"
 	@echo "... kmp.o"

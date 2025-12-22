@@ -144,6 +144,20 @@ huffman/fast:
 	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/build
 .PHONY : huffman/fast
 
+# Convenience name for target.
+templates/CMakeFiles/priority_queue.dir/rule:
+	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 templates/CMakeFiles/priority_queue.dir/rule
+.PHONY : templates/CMakeFiles/priority_queue.dir/rule
+
+# Convenience name for target.
+priority_queue: templates/CMakeFiles/priority_queue.dir/rule
+.PHONY : priority_queue
+
+# fast build rule for target.
+priority_queue/fast:
+	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/priority_queue.dir/build.make templates/CMakeFiles/priority_queue.dir/build
+.PHONY : priority_queue/fast
+
 heap.o: heap.cpp.o
 .PHONY : heap.o
 
@@ -195,6 +209,30 @@ huffman.cpp.s:
 	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/huffman.cpp.s
 .PHONY : huffman.cpp.s
 
+priority_queue.o: priority_queue.cpp.o
+.PHONY : priority_queue.o
+
+# target to build an object file
+priority_queue.cpp.o:
+	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/priority_queue.dir/build.make templates/CMakeFiles/priority_queue.dir/priority_queue.cpp.o
+.PHONY : priority_queue.cpp.o
+
+priority_queue.i: priority_queue.cpp.i
+.PHONY : priority_queue.i
+
+# target to preprocess a source file
+priority_queue.cpp.i:
+	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/priority_queue.dir/build.make templates/CMakeFiles/priority_queue.dir/priority_queue.cpp.i
+.PHONY : priority_queue.cpp.i
+
+priority_queue.s: priority_queue.cpp.s
+.PHONY : priority_queue.s
+
+# target to generate assembly for a file
+priority_queue.cpp.s:
+	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/priority_queue.dir/build.make templates/CMakeFiles/priority_queue.dir/priority_queue.cpp.s
+.PHONY : priority_queue.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -205,12 +243,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... heap"
 	@echo "... huffman"
+	@echo "... priority_queue"
 	@echo "... heap.o"
 	@echo "... heap.i"
 	@echo "... heap.s"
 	@echo "... huffman.o"
 	@echo "... huffman.i"
 	@echo "... huffman.s"
+	@echo "... priority_queue.o"
+	@echo "... priority_queue.i"
+	@echo "... priority_queue.s"
 .PHONY : help
 
 
