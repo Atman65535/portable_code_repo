@@ -18,7 +18,8 @@ public:
     data.push_back(value);
     sift_up(data.size() - 1);
   }
-  const T pop(void){
+
+  T pop(void) {
     assert(!data.empty());
     T retval = data[0];
     std::swap(data[0], data[data.size() - 1]);
@@ -38,10 +39,12 @@ private:
   const size_t parent(const size_t i) {
     return (i - 1) / 2;
   }
-  const size_t left(const size_t i) {
+
+  size_t left(const size_t i) {
     return 2 * i + 1;
   }
-  const size_t right(const size_t i) {
+
+  size_t right(const size_t i) {
     return 2 * i + 2;
   }
 
