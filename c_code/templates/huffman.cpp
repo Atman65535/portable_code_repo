@@ -16,7 +16,8 @@ typedef struct HuffmanNode{
   int weight;
   struct HuffmanNode* left;
   struct HuffmanNode* right;
-  HuffmanNode(): symbol(0), weight(0), left(nullptr), right(nullptr) {}
+  uint8_t depth;
+  HuffmanNode(): symbol(0), weight(0), left(nullptr), right(nullptr), depth(0) {}
   HuffmanNode(int weight): weight(weight), left(nullptr),
   right(nullptr){}
 }HuffmanNode;
@@ -53,12 +54,19 @@ HuffmanNode* build_huff_tree(vector<HuffmanNode*> weights) {
   while(pq.size() > 1) {
     HuffmanNode* ret1 = pq.pop();
     HuffmanNode* ret2 = pq.pop();
-    auto parent = new HuffmanNode(ret1->weight+ret2->weight);
+    auto parent = new HuffmanNode();
+    parent->depth = std::max(ret1->depth, ret2->depth) + 1;
     parent->left = ret1;
     parent->right = ret2;
     pq.push(parent);
   }
   return pq.pop();
+}
+
+HuffmanNode* modify_tree_height(const HuffmanNode* root) {
+  uint8_t height = 0;
+
+
 }
 
 vector<char*> get_huff_codeset() {

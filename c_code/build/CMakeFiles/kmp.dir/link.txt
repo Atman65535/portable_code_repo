@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/kmp.dir/kmp.cpp.o -o kmp 
+/usr/bin/c++ -g CMakeFiles/kmp.dir/kmp.cpp.o -o kmp 

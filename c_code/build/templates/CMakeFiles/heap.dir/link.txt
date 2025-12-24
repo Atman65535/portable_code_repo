@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/heap.dir/heap.cpp.o -o heap 
+/usr/bin/c++ -g CMakeFiles/heap.dir/heap.cpp.o -o heap 

@@ -1,37 +1,37 @@
 [
 {
   "directory": "/home/atman/workspace/portable_code_repo/c_code/build",
-  "command": "/usr/bin/cc    -o CMakeFiles/test1.dir/test1.c.o -c /home/atman/workspace/portable_code_repo/c_code/test1.c",
+  "command": "/usr/bin/gcc-12   -g -o CMakeFiles/test1.dir/test1.c.o -c /home/atman/workspace/portable_code_repo/c_code/test1.c",
   "file": "/home/atman/workspace/portable_code_repo/c_code/test1.c"
 },
 {
   "directory": "/home/atman/workspace/portable_code_repo/c_code/build",
-  "command": "/usr/bin/c++   -std=gnu++20 -o CMakeFiles/test2.dir/test2.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/test2.cpp",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/test2.dir/test2.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/test2.cpp",
   "file": "/home/atman/workspace/portable_code_repo/c_code/test2.cpp"
 },
 {
   "directory": "/home/atman/workspace/portable_code_repo/c_code/build",
-  "command": "/usr/bin/c++   -std=gnu++20 -o CMakeFiles/kmp.dir/kmp.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/kmp.cpp",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/kmp.dir/kmp.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/kmp.cpp",
   "file": "/home/atman/workspace/portable_code_repo/c_code/kmp.cpp"
 },
 {
   "directory": "/home/atman/workspace/portable_code_repo/c_code/build/templates",
-  "command": "/usr/bin/c++   -std=gnu++20 -o CMakeFiles/heap.dir/heap.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/heap.cpp",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/heap.dir/heap.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/heap.cpp",
   "file": "/home/atman/workspace/portable_code_repo/c_code/templates/heap.cpp"
 },
 {
   "directory": "/home/atman/workspace/portable_code_repo/c_code/build/templates",
-  "command": "/usr/bin/c++   -std=gnu++20 -o CMakeFiles/huffman.dir/heap.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/heap.cpp",
-  "file": "/home/atman/workspace/portable_code_repo/c_code/templates/heap.cpp"
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/huffman.dir/priority_queue.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/priority_queue.cpp",
+  "file": "/home/atman/workspace/portable_code_repo/c_code/templates/priority_queue.cpp"
 },
 {
   "directory": "/home/atman/workspace/portable_code_repo/c_code/build/templates",
-  "command": "/usr/bin/c++   -std=gnu++20 -o CMakeFiles/huffman.dir/huffman.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/huffman.cpp",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/huffman.dir/huffman.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/huffman.cpp",
   "file": "/home/atman/workspace/portable_code_repo/c_code/templates/huffman.cpp"
 },
 {
   "directory": "/home/atman/workspace/portable_code_repo/c_code/build/templates",
-  "command": "/usr/bin/c++   -std=gnu++20 -o CMakeFiles/priority_queue.dir/priority_queue.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/priority_queue.cpp",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/priority_queue.dir/priority_queue.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/priority_queue.cpp",
   "file": "/home/atman/workspace/portable_code_repo/c_code/templates/priority_queue.cpp"
 }
 ]

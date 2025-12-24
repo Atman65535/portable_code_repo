@@ -164,7 +164,6 @@ heap.o: heap.cpp.o
 # target to build an object file
 heap.cpp.o:
 	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/heap.dir/build.make templates/CMakeFiles/heap.dir/heap.cpp.o
-	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/heap.cpp.o
 .PHONY : heap.cpp.o
 
 heap.i: heap.cpp.i
@@ -173,7 +172,6 @@ heap.i: heap.cpp.i
 # target to preprocess a source file
 heap.cpp.i:
 	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/heap.dir/build.make templates/CMakeFiles/heap.dir/heap.cpp.i
-	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/heap.cpp.i
 .PHONY : heap.cpp.i
 
 heap.s: heap.cpp.s
@@ -182,7 +180,6 @@ heap.s: heap.cpp.s
 # target to generate assembly for a file
 heap.cpp.s:
 	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/heap.dir/build.make templates/CMakeFiles/heap.dir/heap.cpp.s
-	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/heap.cpp.s
 .PHONY : heap.cpp.s
 
 huffman.o: huffman.cpp.o
@@ -214,6 +211,7 @@ priority_queue.o: priority_queue.cpp.o
 
 # target to build an object file
 priority_queue.cpp.o:
+	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/priority_queue.cpp.o
 	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/priority_queue.dir/build.make templates/CMakeFiles/priority_queue.dir/priority_queue.cpp.o
 .PHONY : priority_queue.cpp.o
 
@@ -222,6 +220,7 @@ priority_queue.i: priority_queue.cpp.i
 
 # target to preprocess a source file
 priority_queue.cpp.i:
+	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/priority_queue.cpp.i
 	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/priority_queue.dir/build.make templates/CMakeFiles/priority_queue.dir/priority_queue.cpp.i
 .PHONY : priority_queue.cpp.i
 
@@ -230,6 +229,7 @@ priority_queue.s: priority_queue.cpp.s
 
 # target to generate assembly for a file
 priority_queue.cpp.s:
+	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/huffman.dir/build.make templates/CMakeFiles/huffman.dir/priority_queue.cpp.s
 	cd /home/atman/workspace/portable_code_repo/c_code/build && $(MAKE) $(MAKESILENT) -f templates/CMakeFiles/priority_queue.dir/build.make templates/CMakeFiles/priority_queue.dir/priority_queue.cpp.s
 .PHONY : priority_queue.cpp.s
 

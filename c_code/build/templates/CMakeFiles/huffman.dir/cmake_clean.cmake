@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/huffman.dir/heap.cpp.o"
-  "CMakeFiles/huffman.dir/heap.cpp.o.d"
   "CMakeFiles/huffman.dir/huffman.cpp.o"
   "CMakeFiles/huffman.dir/huffman.cpp.o.d"
+  "CMakeFiles/huffman.dir/priority_queue.cpp.o"
+  "CMakeFiles/huffman.dir/priority_queue.cpp.o.d"
   "huffman"
   "huffman.pdb"
 )

@@ -69,19 +69,19 @@ include templates/CMakeFiles/huffman.dir/progress.make
 # Include the compile flags for this target's objects.
 include templates/CMakeFiles/huffman.dir/flags.make
 
-templates/CMakeFiles/huffman.dir/heap.cpp.o: templates/CMakeFiles/huffman.dir/flags.make
-templates/CMakeFiles/huffman.dir/heap.cpp.o: ../templates/heap.cpp
-templates/CMakeFiles/huffman.dir/heap.cpp.o: templates/CMakeFiles/huffman.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atman/workspace/portable_code_repo/c_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object templates/CMakeFiles/huffman.dir/heap.cpp.o"
-	cd /home/atman/workspace/portable_code_repo/c_code/build/templates && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT templates/CMakeFiles/huffman.dir/heap.cpp.o -MF CMakeFiles/huffman.dir/heap.cpp.o.d -o CMakeFiles/huffman.dir/heap.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/heap.cpp
+templates/CMakeFiles/huffman.dir/priority_queue.cpp.o: templates/CMakeFiles/huffman.dir/flags.make
+templates/CMakeFiles/huffman.dir/priority_queue.cpp.o: ../templates/priority_queue.cpp
+templates/CMakeFiles/huffman.dir/priority_queue.cpp.o: templates/CMakeFiles/huffman.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/atman/workspace/portable_code_repo/c_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object templates/CMakeFiles/huffman.dir/priority_queue.cpp.o"
+	cd /home/atman/workspace/portable_code_repo/c_code/build/templates && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT templates/CMakeFiles/huffman.dir/priority_queue.cpp.o -MF CMakeFiles/huffman.dir/priority_queue.cpp.o.d -o CMakeFiles/huffman.dir/priority_queue.cpp.o -c /home/atman/workspace/portable_code_repo/c_code/templates/priority_queue.cpp
 
-templates/CMakeFiles/huffman.dir/heap.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman.dir/heap.cpp.i"
-	cd /home/atman/workspace/portable_code_repo/c_code/build/templates && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/atman/workspace/portable_code_repo/c_code/templates/heap.cpp > CMakeFiles/huffman.dir/heap.cpp.i
+templates/CMakeFiles/huffman.dir/priority_queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/huffman.dir/priority_queue.cpp.i"
+	cd /home/atman/workspace/portable_code_repo/c_code/build/templates && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/atman/workspace/portable_code_repo/c_code/templates/priority_queue.cpp > CMakeFiles/huffman.dir/priority_queue.cpp.i
 
-templates/CMakeFiles/huffman.dir/heap.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman.dir/heap.cpp.s"
-	cd /home/atman/workspace/portable_code_repo/c_code/build/templates && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atman/workspace/portable_code_repo/c_code/templates/heap.cpp -o CMakeFiles/huffman.dir/heap.cpp.s
+templates/CMakeFiles/huffman.dir/priority_queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/huffman.dir/priority_queue.cpp.s"
+	cd /home/atman/workspace/portable_code_repo/c_code/build/templates && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/atman/workspace/portable_code_repo/c_code/templates/priority_queue.cpp -o CMakeFiles/huffman.dir/priority_queue.cpp.s
 
 templates/CMakeFiles/huffman.dir/huffman.cpp.o: templates/CMakeFiles/huffman.dir/flags.make
 templates/CMakeFiles/huffman.dir/huffman.cpp.o: ../templates/huffman.cpp
@@ -99,13 +99,13 @@ templates/CMakeFiles/huffman.dir/huffman.cpp.s: cmake_force
 
 # Object files for target huffman
 huffman_OBJECTS = \
-"CMakeFiles/huffman.dir/heap.cpp.o" \
+"CMakeFiles/huffman.dir/priority_queue.cpp.o" \
 "CMakeFiles/huffman.dir/huffman.cpp.o"
 
 # External object files for target huffman
 huffman_EXTERNAL_OBJECTS =
 
-templates/huffman: templates/CMakeFiles/huffman.dir/heap.cpp.o
+templates/huffman: templates/CMakeFiles/huffman.dir/priority_queue.cpp.o
 templates/huffman: templates/CMakeFiles/huffman.dir/huffman.cpp.o
 templates/huffman: templates/CMakeFiles/huffman.dir/build.make
 templates/huffman: templates/CMakeFiles/huffman.dir/link.txt
