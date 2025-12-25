@@ -5,6 +5,8 @@
 #pragma once
 
 #include <algorithm>
+#include <cassert>
+#include <cstdint>
 #include <fstream>
 #include <iostream>
 #include <memory>
@@ -15,65 +17,53 @@
 
 using std::cout;
 using std::endl;
-using std::string;
-using std::vector;
 using std::ifstream;
 using std::ofstream;
 using std::shared_ptr;
+using std::string;
+using std::vector;
 
 /**
  * write bit. IO class.
+ * this class can manage an ifstream, to read bits quickly
  */
 class BitReader {
 private:
-    ofstream file_in;
-    uint64_t write_buf = 0;
-    uint8_t bit_counter = 0;
-    uint64_t total_write_bit = 0;
+  ifstream file_in;
+  uint64_t read_buf = 0;
+  uint8_t buf_bit_counter = 0;
+  uint64_t total_unread_bit = 0; // this counter is for get one bit
+  uint64_t file_bytes = 0;
 
 public:
-    explicit BitReader(const string& in_path) : file_in(ofstream(out_path, std::ios::binary)) {
-    }
-
-    explicit BitWriter(ofstream file_out) : file_in(std::move(file_out)) {
-    }
-
-    ~BitWriter() {
-        flush();
-    }
-
-    bool operator()(const uint32_t& code, const uint8_t& length) {
-        if (length > 32 || length < 1)
-            throw std::length_error("invalid code length.");
-        while (file_in.good() && length + bit_counter > 64)
-            write_byte();
-        write_buf |= static_cast<uint64_t>(code) << (64 - length - bit_counter);
-        bit_counter += length;
-        // write when it can.
-        while (file_in.good() && bit_counter >= 8)
-            write_byte();
-        return file_in.good();
-    }
-
-    bool flush() {
-        while (file_in.good() && bit_counter) {
-            write_byte();
-        }
-        return file_in.good();
-    }
-
+  BitReader(const string &in_name, uint64_t total_bits)
+      : file_in(ifstream(in_name, std::ios::binary), total_unread_bit(total_bits), file_bytes(total_bits / 8 + 1)) {}
+  BitReader(ifstream file_stream, uint64_t total_bits)
+      : file_in(std::move(file_stream), total_unread_bit(total_bits), file_bytes(total_bits / 8 + 1)) {}
+  
+  uint8_t read_one_bit() {
+    if (buf_bit_counter == 0)
+      update_buf();
+    uint8_t bit = static_cast<uint8_t>(read_buf >> 63);
+    read_buf <<= 1;
+    buf_bit_counter -= 1;
+    total_unread_bit -= 1;
+    return bit;
+  }
+  const bool read_over() {
+    return total_unread_bit == 0;
+  }
 private:
-    void write_byte() {
-        uint8_t byte = static_cast<char>(write_buf >> 56);
-        write_buf <<= 8;
-        file_in.put(static_cast<char>(byte));
-        if (bit_counter >= 8) {
-            bit_counter -= 8;
-            total_write_bit += 8;
-        }
-        else {
-            total_write_bit += bit_counter;
-            bit_counter = 0;
-        }
-    }
+    void update_buf() {// update 32 bits once
+      if (file_bytes >= 8) {
+        file_in.read(reinterpret_cast<char*>(&read_buf), sizeof(uint32_t));
+        buf_bit_counter += 64;
+        file_bytes -= 8;
+      }
+      else {
+        file_in.read(reinterpret_cast<char*>(&read_buf), file_bytes);
+        buf_bit_counter += file_bytes * 8;
+        file_bytes = 0;
+      }
+    }    
 };
