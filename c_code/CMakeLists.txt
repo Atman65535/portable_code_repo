@@ -4,6 +4,9 @@ project(c_code)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# my json is 3.11.3 (noble)
+find_package(nlohmann_json 3.10.0 REQUIRED)
+
 add_subdirectory(templates)
 add_subdirectory(huffman)
 
