@@ -172,7 +172,7 @@ private:
     node_ptr head = nullptr;
     node_ptr tail = nullptr;
 
-    node_ptr build_new_node(coordinate val = coordinate(0,0), node_ptr predecessor = nullptr) {
+    static node_ptr build_new_node(coordinate val = coordinate(0,0), node_ptr predecessor = nullptr) {
         auto node_new = new node;
         node_new->value = val;
         node_new->predecessor = predecessor;

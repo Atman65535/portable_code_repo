@@ -21,7 +21,9 @@
 #include <string>
 #include <vector>
 
-#include "../../templates/priority_queue.hpp"
+#include "priority_queue.hpp"
+#include "bit_writer.hpp"
+#include "bit_reader.hpp"
 
 using std::cout;
 using std::endl;
@@ -65,17 +67,79 @@ private: // private structures
     };
 
 public:
-    CanonicalEncoderDecoder(const string& file_name, const bool is_raw) {
-        if (is_raw) {
+    CanonicalEncoderDecoder(const string& path_in, const string& path_out, const bool is_compress) {
+        this->path_in = path_in;
+        this->path_out = path_out;
+        ofstream file_out(path_out, std::ios::binary);
+        ifstream file_in(path_in, std::ios::binary);
+        if (is_compress) {
             // the file is the raw one, which haven't been compressed
-            const vector<BuildNode> frequency_vec = init_from_raw(file_name);
+            const vector<BuildNode> frequency_vec = init_from_raw(path_in);
             this->encode_list = canonical_freq2len(frequency_vec);
             this->decode_list = canonical_len2code(encode_list);
         }
         else {
+            this->encode_list = init_from_compress_list(file_in);
+            this->decode_list = canonical_len2code(encode_list);
         }
     }
 
+    void encode() {
+        ofstream file_out(path_out, std::ios::binary);
+        file_out.seekp(head_offset);
+        BitWriter writer(file_out); // send reference
+        uint8_t byte;
+        ifstream file_in(path_in, std::ios::binary);
+        while (file_in.read(reinterpret_cast<char*>(&byte), sizeof(uint8_t))) {
+            compressed_symbols += 1;
+            writer(encode_list[byte]->code, encode_list[byte]->code_length);
+        }
+        // safe bits
+        writer(static_cast<uint32_t>(0), 32);
+        writer(static_cast<uint32_t>(0), 32);
+        writer.flush();
+        save_compress_list(file_out);
+    }
+
+    void decode() {
+        ifstream file_in(path_in, std::ios::binary);
+        ofstream file_out(path_out, std::ios::binary);
+        uint8_t min_len = decode_list[0]->code_length;
+        uint8_t max_len = decode_list[decode_list.size() - 1]->code_length;
+        vector<uint32_t> min_code(33, 0);
+        vector<uint32_t> max_code(33, 0);
+        vector<uint8_t> min_index(33, 0);
+        for (int i = 0; i< decode_list.size(); i++) {
+            uint8_t length = decode_list[i]->code_length;
+            uint32_t code = decode_list[i]->code;
+            if (i == 0) {
+                min_code[length] = code;
+                min_index[length] = i;
+            }
+            else if (length > decode_list[i - 1]->code_length) {
+                min_code[length] = code;
+                min_index[length] = i;
+            }
+
+            if (code > max_code[length])
+                max_code[length] = code;
+        }
+        file_in.seekg(head_offset);
+        BitReader reader(file_in);
+        while (compressed_symbols) {
+            for (int len = min_len; len <= max_len; len ++) {
+                const uint32_t code = reader.peek_code_with_len(len);
+                if (code >= min_code[len] && code <= max_code[len]) {
+                    uint8_t symbol = decode_list[min_index[len] + code - min_code[len]]->symbol;
+                    file_out.write(reinterpret_cast<char*>(&symbol), sizeof(uint8_t));
+                    reader.remove_code(len);
+                    compressed_symbols --;
+                }
+            }
+        }
+        file_in.close();
+        file_out.close();
+    }
 private:
     static vector<BuildNode> init_from_raw(const string& file_name) {
         vector<BuildNode> frequency_counter(256); // invokes default constructor of BN
@@ -130,6 +194,7 @@ private:
         // get len
         get_canonical_code_len(encode_list, 0, root);
         // canonical time !
+        return encode_list;
     }
 
     /**
@@ -191,13 +256,35 @@ private:
         return decodes;
     }
 
-    void init_from_compress_list() {
+    vector<shared_ptr<CanonCode>> init_from_compress_list(ifstream& file_in) {
+        std::vector<shared_ptr<CanonCode>> encodes(256);
+        file_in.seekg(std::ios_base::beg);
+        file_in.read(reinterpret_cast<char*>(&brand), sizeof(brand));
+        file_in.read(reinterpret_cast<char*>(&compressed_symbols), sizeof(compressed_symbols));
+        for (int i = 0; i < 256; i++) {
+            encodes[i] = std::make_shared<CanonCode>();
+            encodes[i]->symbol = i;
+            file_in.read(reinterpret_cast<char*>(&encodes[i]->code_length),
+                           sizeof(encodes[i]->code_length));
+        }
+        return encodes;
     }
 
-    void save_compress_list() {
+    void save_compress_list(ofstream& file_out) {
+        file_out.seekp(std::ios_base::beg);
+        file_out.write(reinterpret_cast<char*>(&brand), sizeof(brand));
+        file_out.write(reinterpret_cast<char*>(&compressed_symbols), sizeof(compressed_symbols));
+        for (int i = 0; i < 256; i++) {
+            file_out.write(reinterpret_cast<char*>(&encode_list[i]->code_length),
+                           sizeof(encode_list[i]->code_length));
+        }
     }
 
 private:
+    string path_in, path_out;
     vector<shared_ptr<CanonCode>> encode_list;
     vector<shared_ptr<CanonCode>> decode_list;
+    uint64_t compressed_symbols = 0;
+    uint32_t brand = 0x14451100;
+    uint32_t head_offset = 4 + 8 + 256;
 };

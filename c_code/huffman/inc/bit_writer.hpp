@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-#include "../../templates/priority_queue.hpp"
+#include "priority_queue.hpp"
 
 using std::cout;
 using std::endl;
@@ -25,16 +25,13 @@ using std::shared_ptr;
  */
 class BitWriter {
 private:
-    ofstream file_out;
+    ofstream& file_out;
     uint64_t write_buf = 0;
     uint8_t bit_counter = 0;
     uint64_t total_write_bit = 0;
 
 public:
-    explicit BitWriter(const string& out_path) : file_out(ofstream(out_path, std::ios::binary)) {
-    }
-
-    explicit BitWriter(ofstream file_out) : file_out(std::move(file_out)) {
+    explicit BitWriter(ofstream& file_out) : file_out(file_out) {
     }
 
     ~BitWriter() {
