@@ -10,7 +10,4 @@ find_package(nlohmann_json 3.10.0 REQUIRED)
 add_subdirectory(templates)
 add_subdirectory(huffman)
 
-add_executable(test1 test1.c)
-add_executable(test2 test2.cpp)
-
 add_executable(kmp kmp.cpp)
