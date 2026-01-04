@@ -1,5 +1,0 @@
-/home/atman/a_workspace/practice_workspace/c_code/templates/build/CMakeFiles/heap.dir
-/home/atman/a_workspace/practice_workspace/c_code/templates/build/CMakeFiles/huffman.dir
-/home/atman/a_workspace/practice_workspace/c_code/templates/build/CMakeFiles/priority_queue.dir
-/home/atman/a_workspace/practice_workspace/c_code/templates/build/CMakeFiles/edit_cache.dir
-/home/atman/a_workspace/practice_workspace/c_code/templates/build/CMakeFiles/rebuild_cache.dir
