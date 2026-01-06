@@ -23,7 +23,6 @@ void search_insert(std::vector<int>& array) {
     }
   }
 }
-
 int main() {
   std::vector<int> arr = {2,3, 5, 1, 3, 12, 2, 32, 0};
   search_insert(arr);

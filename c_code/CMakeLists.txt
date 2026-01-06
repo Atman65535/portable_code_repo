@@ -11,6 +11,5 @@ find_package(nlohmann_json 3.10.0 REQUIRED)
 add_subdirectory(templates)
 add_subdirectory(huffman)
 add_subdirectory(datastructure)
-add_subdirectory(datastructure/GraphAlgorithmsDemo)
 
 add_executable(kmp kmp.cpp)
