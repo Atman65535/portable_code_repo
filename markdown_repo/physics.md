@@ -51,7 +51,7 @@ $$
 
 # Simple Harmonic Vibration.
 $$
-A_0 \cos (\omega t + \fai_0)
+A_0 \cos (\omega t + \phi_0)
 $$
 
 - with damper:
@@ -62,7 +62,7 @@ def: \beta = \frac{\gamma}{2m}
 \begin{cases}
 y &= e^{-\beta t}(C_1 e^{\sqrt{\beta^2 - \omega^2}t} + C_2 e^{\sqrt{\beta^2-\omega^2}t}), &\beta > \omega \\
 y &= e^{-\beta t}(C_1 + C_2t), &\beta = \omega \\
-y &= e^{-\beta t}A_0 \cos(\sqrt{\omega^2 - \beta^2}t + \fai_0),& \beta < \omega \\
+y &= e^{-\beta t}A_0 \cos(\sqrt{\omega^2 - \beta^2}t + \phi_0),& \beta < \omega \\
 \end{cases}
 \end{align}
 $$
@@ -76,8 +76,9 @@ Same Intensity, same frequency, small phase difference.
 # Machanical Waves
 $$
 \begin{align}
-\bar{\omega} = \frac{1}[2]\rou A^2 \omega^2 \\[2en]
+\bar{\omega} = \frac{1}{2} \rho A^2 \omega^2 \\
 I = \bar{\omega}u
+\end{align} 
 $$
 
 ### Standing Wave
@@ -87,7 +88,7 @@ $$
 
 # Optical
 
-
+![[Brewster.png]]
 
 # Quantum Mechanics
 
@@ -101,18 +102,23 @@ $$
 
 - Compton Scattering
 $$
-\Delta \lambda =\frac{2h}{m_0 c} \sin^2 (\frac{\fai}{2})
+\Delta \lambda =\frac{2h}{m_0 c} \sin^2 (\frac{\phi}{2})
 $$
 
-- Matter Waves
+- Material Waves
+$$
+\lambda = \frac{h}{p}= \frac{h}{m_0c}\sqrt{1 - \frac{v^2}{c^2}}
+$$
 
 - Schodinger Wave Function
   - one dim well
-
-- Electrons Status
+- Hydrogen Spectrums
 $$
 \frac{1}{\lambda} = R (\frac{1}{n_l^2} - \frac{1}{n_h^2})
 $$
+	- Brag Lamman , Paxing
+- Electrons Status
+
 
 $$
 E_n = \frac{-13.6 eV}{n^2}

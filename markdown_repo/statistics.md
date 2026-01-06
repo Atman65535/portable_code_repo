@@ -1,0 +1,48 @@
+
+---
+- [x] Center Limit T
+- [ ] Gaussian $\chi^2$, t, f distribution.
+
+# Basic Calc
+
+# Exponential Distribution
+<center>No memory</center>
+- $min{X_1, X_2, X_3}$ also follows exponential distribution
+- $F(x) = 1 - e^{\lambda x}$ 
+
+# CLT & LLN
+## CLT
+Independent identically distributed, limited variance and expectation.
+Then we have
+$$
+\frac{\bar{X} - \mu}{\sigma/\sqrt n} \sim \mathcal N(0, 1)
+$$
+no matter the distribution is. 
+
+## LLN
+- Markov inequaion
+$$
+P(|X| \geqslant \epsilon) \leqslant \frac{E|X|^k}{\epsilon^k} 
+$$
+- Convergence in probability
+$$
+\lim_{n \to +\infty} \{|X_n - \theta | < \epsilon \} = 1 
+$$
+>[!warning] Not Expectation
+# Normal Population
+> [!danger] The $S^2$ and $\bar{X}$ 
+> If given a normal distribution, they are independent, others are not.
+> When it comes $\Sigma (X_i -\mu)^2$, it is **NOT INDEPENDENT** with $\bar{X}$
+
+
+# Random Process Proof
+- Strictly Stationary Process
+
+
+- Generalized Stationary Process
+
+### About Proofs
+- Gaussian Process
+$$
+\mathcal{N} : widesense \ stationary \  \Leftrightarrow strictly\ stationary
+$$
