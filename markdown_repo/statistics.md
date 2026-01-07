@@ -5,6 +5,9 @@
 
 # Basic Calc
 
+## Covariance
+Linear and bi-linear property.
+
 # Exponential Distribution
 <center>No memory</center>
 - $min{X_1, X_2, X_3}$ also follows exponential distribution
@@ -24,6 +27,13 @@ no matter the distribution is.
 $$
 P(|X| \geqslant \epsilon) \leqslant \frac{E|X|^k}{\epsilon^k} 
 $$
+
+Then Chebbychev inequation
+
+$$
+P(|X - \miu| \geqslant \epsilon) \leqslant \frac{DX}{\epsilon^2}
+$$
+
 - Convergence in probability
 $$
 \lim_{n \to +\infty} \{|X_n - \theta | < \epsilon \} = 1 
@@ -37,12 +47,24 @@ $$
 
 # Random Process Proof
 - Strictly Stationary Process
-
+For arbitary dimension distribution function:
+$$
+F(X_{1:n};t_{1:n}) = F(X_{1;n};t_{1:n}+\epsilon )
+$$
+However, this definition is bad for using
 
 - Generalized Stationary Process
+  1. The expectation exists
+  2. The variance exists
+  3. Self relative function only related to the time shift $\tau$
 
 ### About Proofs
 - Gaussian Process
 $$
 \mathcal{N} : widesense \ stationary \  \Leftrightarrow strictly\ stationary
 $$
+
+>[!note] Gaussian
+>So we always proof its generalized stationary property for proof strictly stationary
+> And we should attention that this trait is only for Gaussian.
+

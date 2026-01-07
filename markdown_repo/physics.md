@@ -1,6 +1,16 @@
 # Physics Summary
 
 # Themology
+
+## particle energy
+Only related to temperature.
+Inner energy is composed of translation kinematic energy and vibration energy.
+$$
+U_particle = \frac{dof}{2} k T
+k N_A = R
+$$
+
+
 $$
 \partial Q = \partial U + P\partial V
 $$
@@ -43,11 +53,20 @@ $$
 > Entropy is a state function, its value only rely on start and end state.
 > Use reversible processes for first formula.
 
-### Heat Machine.
+- Carnot Circulation
+Carnot circulation is inversable, so we can use Entropy to get its efficiency.
 $$
-\eta = \frac{Expectation \ Work}{Total \ Work}
+\eta = 1 - \frac{Q_l}{Q_h}
 $$
-
+And we also have heat pump and cooler:
+$$
+\begin{align}
+\eta_{pump} = \frac{Q_H}{Q_H - Q_L}
+\eta_{cooler} = \frac{Q_L}{Q_H- Q_L}
+\end{align}
+$$
+>[!note] efficient > 1?
+>That's right. Cus our definition is "Useful / work". So sometimes we don't pay too much work and get good results.
 
 # Simple Harmonic Vibration.
 $$
@@ -87,8 +106,10 @@ $$
 $$
 
 # Optical
-
-![[Brewster.png]]
+- Brewster Angle
+When the reflection ray and fraction ray become orthogonal.
+The reflecting one become complete bias vibrating. (??)
+<img src="./Brewster.png" alt="Brewster angle" align="center" width="600">
 
 # Quantum Mechanics
 
@@ -118,24 +139,23 @@ $$
 $$
 	- Brag Lamman , Paxing
 - Electrons Status
-
-
+	- Energy level of atom, just like average radius to core.
 $$
 E_n = \frac{-13.6 eV}{n^2}
 $$
-
+	- rotation symmetric, 0~n-1, spdfg
 $$
 L = \sqrt{(l+1)l} \hbar
 $$
-
+	- the projection of angular momentum on one axis 
 $$
 L_z = m_z \hbar
 $$
-
+	- DOF of electronds in quantum dimension. This is spin angular momentum.
 $$
 S = \frac{\sqrt{3}}{2} \hbar 
 $$
-
+	- this is the projection of spin am when there is an outer magnetic field.
 $$
 S_z = m_s \hbar
 $$
