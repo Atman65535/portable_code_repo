@@ -8,6 +8,11 @@
 ## Covariance
 Linear and bi-linear property.
 
+# PDF
+$$
+f_{X, Y}(x, y) = f_X(x) f_{Y|X}(y|x)
+$$
+always true. When it is a probability.
 # Exponential Distribution
 <center>No memory</center>
 - $min{X_1, X_2, X_3}$ also follows exponential distribution
@@ -31,7 +36,7 @@ $$
 Then Chebbychev inequation
 
 $$
-P(|X - \miu| \geqslant \epsilon) \leqslant \frac{DX}{\epsilon^2}
+P(|X - \mu| \geqslant \epsilon) \leqslant \frac{DX}{\epsilon^2}
 $$
 
 - Convergence in probability
