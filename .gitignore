@@ -29,3 +29,7 @@ obj/
 .DS_Store
 *chrome*
 *.idea*
+
+.pio/
+.vscode/
+.idea/
