@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+
 
 typedef struct Node {
   int coef;

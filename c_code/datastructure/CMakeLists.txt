@@ -8,5 +8,6 @@ add_executable(sort sort.cpp)
 
 add_executable(quick_sort quicksort.cpp)
 
+add_executable(chainset chainset.cpp)
 
 add_executable(expression expression.cpp)

@@ -1,7 +1,6 @@
 #include <ios>
 #include <iostream>
 #include <vector>
-#include <random>
 
 void quick_sort(std::vector<int>& array,
                 const int lower,
@@ -109,11 +108,33 @@ void heap_sort(std::vector<int>& array) {
     }
 }
 
+int partition_ctype(int arr[], int left, int right) {
+    int pivot = arr[left];
+    int pr = right;
+    int pl = left;
+    while (pr > pl) {
+        while (pr > pl && arr[pr] >= pivot) pr --;
+        if (pr > pl) arr[pl] = arr[pr];
+        while (pr > pl && arr[pl] <= pivot) pl++;
+        if (pr > pl) arr[pr] = arr[pl];
+    }
+    arr[pl] = pivot;
+    return pl;
+}
+void quick_ctype(int arr[], int left, int right) {
+    if (left >= right)
+        return;
+    int p = partition_ctype(arr, left, right);
+    quick_ctype(arr, left, p-1);
+    quick_ctype(arr, p+1, right);
+}
 int main() {
-    std::vector<int> arr = {344,30, 3157, 1509, 8603, 1048,3,85,580,554};
+    int arr[] = {344,30, 3157, 1509, 8603, 1048,3,85,580,554};
     for (const auto& i:arr)
         std::cout << i << " ";
     std::cout << std::endl;
-    heap_sort(arr);
+    quick_ctype(arr, 0, 9);
+    for (const auto& i :arr)
+        printf("%d ", i);
     std::cout << std::endl;
 }
